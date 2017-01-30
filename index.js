@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JIRA Rapid Board highlighter
-// @namespace    http://kalee.hu
-// @version      0.0.3
+// @namespace    http://www.kalee.hu
+// @version      0.0.1
 // @description  Highlight closed stories on JIRA Rapid Board.
 // @author       Moondancer83
 // @homepage     https://github.com/Moondancer83/JIRARapidBoardHighlighter
@@ -17,7 +17,20 @@
 
     var colors = {
         done: "#e0efdc",
+        my: "#efdce0"
     };
     var head = $("head");
-    head.append("<style>.js-issue.ghx-issue-compact.ghx-done {background-color:" + colors.done + "}</style>");
+    var username = $("#header-details-user-fullname").data('username');
+    
+    setTimeout(function() {
+        setStyles();
+        markMyIssues();
+    }, 5000);
+    
+    function setStyles() {
+        head.append("<style>.js-issue.ghx-issue-compact.ghx-done {background-color:" + colors.done+ "} .js-issue.ghx-issue-compact.ghx-issue-my {background-color: " + colors.my + "}</style>");    
+    }
+    function markMyIssues() {
+        $(".ghx-end img[src*=" + username +"].ghx-avatar-img").closest(".js-issue:not('.ghx-done')").addClass("ghx-issue-my");
+    }
 })();
