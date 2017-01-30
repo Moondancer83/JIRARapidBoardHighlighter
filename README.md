@@ -1,2 +1,4 @@
 # JIRARapidBoardHighlighter
-Highlight closed stories on JIRA Rapid Board.
+Highlight stories on JIRA Rapid Board.
+- Closed stories (Pale Green)
+- My open stories (Pale Red)
