@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JIRA Rapid Board highlighter
 // @namespace    http://www.kalee.hu
-// @version      0.0.1
+// @version      0.0.4
 // @description  Highlight closed stories on JIRA Rapid Board.
 // @author       Moondancer83
 // @homepage     https://github.com/Moondancer83/JIRARapidBoardHighlighter
